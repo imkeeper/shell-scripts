@@ -1,0 +1,6 @@
+#/usr/bin/env stap
+
+probe syscall.open
+{
+    printf("Process:%s(%d) \tAction:open (%s),\tfilename%s \n",execname(),pid(),argstr,filename)
+}
